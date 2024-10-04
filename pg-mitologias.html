@@ -63,10 +63,7 @@
                     </div>
 
                     <div class="sub-desc">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur, nisi ut sollicitudin
-                            interdum, ipsum lectus feugiat odio, et gravida augue purus in purus. Nam gravida lectus
-                            dui, non feugiat enim pharetra eu. Nullam congue diam eu erat mollis posuere. Etiam mollis
-                            hendrerit tempus. Morbi dignissim ligula venenatis, malesuada mi quis, efficitur erat.</h3>
+                        <h3>{subdescriçao}</h3>
                     </div>
 
                 </div>
@@ -81,21 +78,7 @@
 
                     <!--texto da mitologia-->
                     <div class="in-text" id="inside-text">
-                        <h3>Phasellus porta posuere volutpat. Phasellus lacus mi, rhoncus at elementum non, vehicula nec
-                            odio. Quisque congue, diam ac sagittis ultricies, lacus lorem viverra nulla, at lacinia mi
-                            quam a erat. Aenean bibendum purus magna, eu viverra justo tincidunt ut. Mauris sodales
-                            ipsum quis arcu accumsan sollicitudin. Praesent nec tortor finibus, tincidunt dui eu,
-                            pretium sem. Donec viverra rhoncus molestie. Vestibulum ante ipsum primis in faucibus orci
-                            luctus et ultrices posuere cubilia curae; Maecenas eu lacus vitae erat auctor dapibus et
-                            eget augue. Vivamus elit arcu, iaculis congue metus nec, imperdiet efficitur nunc.  
-                            <br><br>
-                            In venenatis pretium massa non fermentum. Maecenas feugiat vestibulum lacus non viverra.
-                            Quisque facilisis diam vel mauris efficitur fermentum. Sed velit nulla, auctor ac posuere
-                            at, fringilla quis quam. Aliquam euismod facilisis ante, eu cursus ligula tempus non.
-                            Praesent et urna orci. Sed ut eros pellentesque, aliquet lectus eu, feugiat elit. Curabitur
-                            vitae nisl id dui suscipit semper. In ullamcorper dolor ut felis aliquam imperdiet. Nulla
-                            sed magna a sem consectetur porttitor. Pellentesque eu diam pulvinar, dapibus erat quis,
-                            aliquet nibh. Ut tincidunt tortor sed ipsum accumsan, sit amet gravida lectus cursus.</h3>
+                        <h3>{descrição^}</h3>
                     </div>
 
                     
@@ -114,5 +97,49 @@
         </section>
     </main>
 </body>
+<script>
+    function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
 
+        function loadMitology(id) {
+            fetch(`http://127.0.0.1:8000/mythologies/${id}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const mitologia = data.mitologia; // Ajuste o nome da propriedade conforme sua API
+
+                    document.getElementById('mitologiaNome').innerText = `Guia definitivo para a mitologia ${mitologia.nome}`;
+                    document.getElementById('mitologiaSubDesc').innerText = mitologia.subdescricao || ''; // Subdescrição se disponível
+                    document.getElementById('mitologiaImg').style.backgroundImage = `url(${mitologia.imagem || 'images/mito_default.jpg'})`;
+                    document.getElementById('mitologiaDescricao').innerText = mitologia.descricao;
+
+                    // Carregue recursos populares, se houver
+                    const recursosBox = document.getElementById('popular-resources-box');
+                    recursosBox.innerHTML = ''; // Limpa a caixa antes de preencher
+                    mitologia.recursos.forEach(recurso => {
+                        const link = document.createElement('a');
+                        link.href = recurso.url; // URL do recurso
+                        link.innerText = recurso.nome; // Nome do recurso
+                        recursosBox.appendChild(link);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error loading mitologia:", error);
+                });
+        }
+
+        // Carrega a mitologia baseada no ID da URL
+        const id = getQueryParam('id');
+        if (id) {
+            loadMitology(id);
+        } else {
+            console.error("ID da mitologia não fornecido na URL.");
+        }
+</script>
 </html>

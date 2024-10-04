@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style-history.css"> <!-- Novo CSS -->
+    <title>Histórias</title>
+</head>
+
+<body>
+    <header class="all-pg-header">
+        <img class="logotype" src="images/logo-site.png" alt="Logotipo" style="width: 150px; border-radius: 5px; left: 10px;">
+        <div class="inputs">
+            <a href="" style="text-decoration: none;color: #000;">Mapa</a>
+            <div class="dropdown">
+                <button class="dropbtn">Histórias</button>
+                <div class="dropdown-content">
+                    <div class="box-container">
+                        <div class="box">História 1</div>
+                        <div class="box">História 2</div>
+                        <div class="box">História 3</div>
+                        <div class="box">História 4</div>
+                        <div class="box">História 5</div>
+                    </div>
+                </div>
+            </div>
+            <input class="search" required="" type="text" placeholder="Pesquisar histórias" />
+        </div>
+    </header>
+
+    <main>
+        <section class="bg-text">
+            <div class="internal-box" id="internal-box">
+                <div class="in-header-box">
+                    <div class="caixa-sub-text" style="display: flex; flex-direction: column;">
+                        <div class="story-name" style="color: gray; font-size: x-large;">
+                            Nome da História
+                        </div>
+                        <div class="welcome">
+                            <h1 style="font-size: xx-large;">
+                                A História de {NOME}
+                            </h1>
+                        </div>
+
+                        <div class="sub-desc">
+                            <h3>Resumo da história: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur, nisi ut sollicitudin interdum.</h3>
+                        </div>
+                    </div>
+
+                    <div class="img-in-main"
+                        style="background-image: url(images/historia_exemplo.png); background-position: center; background-size: cover;">
+                    </div>
+                </div>
+
+                <div class="in-main">
+                    <div class="in-text-box" id="inside-text" style="display: flex; flex-direction: column;">
+                        <div class="in-text-1">
+                            <div class="in-text-title">
+                                <h2>Sobre a História</h2>
+                            </div>
+                            <div class="in-text">
+                                <h3>Texto descritivo sobre a história. Phasellus porta posuere volutpat...</h3>
+                            </div>
+                        </div>
+
+                        <div class="in-text-2" style="margin-top: 20px;">
+                            <div class="in-text-title">
+                                <h2>Contexto e Origem</h2>
+                            </div>
+                            <div class="in-text">
+                                <h3>Informações sobre o contexto e origem da história. Phasellus lacus mi, rhoncus at elementum non...</h3>
+                            </div>
+                        </div>
+
+                        <!-- Adicionando imagens extras -->
+                        <div class="extra-images" style="display: flex; flex-wrap: wrap; margin-top: 20px;">
+                            <img src="images/historia_img1.png" alt="Imagem Extra 1" style="width: 30%; margin: 5px; border-radius: 5px;">
+                            <img src="images/historia_img2.png" alt="Imagem Extra 2" style="width: 30%; margin: 5px; border-radius: 5px;">
+                            <img src="images/historia_img3.png" alt="Imagem Extra 3" style="width: 30%; margin: 5px; border-radius: 5px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
