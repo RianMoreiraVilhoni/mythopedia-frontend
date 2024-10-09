@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento da Mythopedia</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <aside>
+        <img src="../images/logo-site.png" alt="">
+        <br><br>
+        <ul class="menu-hover-fill flex flex-col items-start leading-none text-2xl uppercase space-y-4">
+            <li><a href="../index.html" data-text="home">home</a></li>
+            <li><a href="#" data-text="archives">Mitologias</a></li>
+            <li><a href="#" data-text="tags">Deuses</a></li>
+            <li><a href="#" data-text="categories">Comentarios</a></li>
+            <li><a href="#" data-text="about">Usuarios</a></li>
+        </ul>
+    </aside>
+    <main style="width: 100vh;">
+
+        <div class="container">
+            <div class="content">
+                <div class="title">
+                    <h1>Gerenciar Mitologias</h1>
+                </div>
+                <div class="MitologiaList" id="MitologiaList">
+                    <div class="card">
+                        <div class="image"></div>
+                        <div class="content">
+                            <a href="#">
+                                <span class="title">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </span>
+                            </a>
+
+                            <p class="desc">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
+                                dolores, possimus pariatur animi temporibus nesciunt praesentium
+                            </p>
+
+                            <a class="action" href="#">
+                                Find out more
+                                <span aria-hidden="true">
+                                    →
+                                </span>
+                            </a>
+                        </div>
+                        <section id="MitologiaForm" class="d-none">
+                            <h2 id="formTitle">Cadastrar nova</h2>
+                            <form id="MitologiaFormElement">
+                                <input type="hidden" id="MitologiaId">
+                                <div class="mb-3">
+                                    <label for="nome" class="form-label">Nome</label>
+                                    <input type="text" class="form-control" id="nome" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="tarifa" class="form-label">Tarifa</label>
+                                    <input type="number" step="0.01" class="form-control" id="tarifa" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </main>
+
+</body>
+<script src="js/mitoscript.js"></script>
+</html>
