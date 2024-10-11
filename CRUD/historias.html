@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento da Mythopedia</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <aside>
+        <img src="../images/logo-site.png" alt="">
+        <br><br>
+        <ul class="menu-hover-fill flex flex-col items-start leading-none text-2xl uppercase space-y-4">
+            <li><a href="historias.html" data-text="home">Historias</a></li>
+            <li><a href="mitologias.html" data-text="archives">Mitologias</a></li>
+            <li><a href="deuses.html" data-text="tags">Deuses</a></li>
+            <li><a href="#" data-text="categories">Comentarios</a></li>
+            <li><a href="#" data-text="about">Usuarios</a></li>
+        </ul>
+    </aside>
+    <main style="width: 100vh;">
+        
+        <div class="container">
+            <div class="content">
+                <div class="title">
+                    <h1>Gerenciar Mitologias</h1>
+                    <div class="text-center my-4">
+                        <button class="btn btn-primary" style="background-color: #1abc9c;" onclick="showAddForm()">Adicionar Nova Mitologia</button>
+                    </div>
+                </div>
+                <div class="StoryList" id="StoryList">
+                    <div class="card">
+                        <div class="image"></div>
+                        <div class="content">
+                            <a href="#">
+                                <span class="title">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </span>
+                            </a>
+
+                            <p class="desc">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
+                                dolores, possimus pariatur animi temporibus nesciunt praesentium
+                            </p>
+
+                            <a class="action" href="#">
+                                Find out more
+                                <span aria-hidden="true">
+                                    →
+                                </span>
+                            </a>
+                        </div>
+                        <section id="HistoryForm" class="d-none" style="padding: 2rem; background-color: white; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 0.5rem;">
+                            <h2 id="formTitle" style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem; color: #4a5568;">Cadastrar nova História</h2>
+                            <form id="HistoryFormElement" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                                <input type="hidden" id="storyId">
+                                
+                                <div>
+                                    <label for="title" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">Título</label>
+                                    <input type="text" id="title" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required>
+                                </div>
+        
+                                <div>
+                                    <label for="content" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">Conteúdo</label>
+                                    <textarea id="content" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required></textarea>
+                                </div>
+        
+                                <div>
+                                    <label for="author" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">Autor</label>
+                                    <input type="text" id="author" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required>
+                                </div>
+        
+                                <div>
+                                    <label for="source" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">Fonte</label>
+                                    <input type="text" id="source" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required>
+                                </div>
+        
+                                <div>
+                                    <label for="publish_time" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">Data de Publicação</label>
+                                    <input type="datetime-local" id="publish_time" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required>
+                                </div>
+        
+                                <div>
+                                    <label for="last_updated" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">Última Atualização</label>
+                                    <input type="datetime-local" id="last_updated" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required>
+                                </div>
+        
+                                <div>
+                                    <label for="views" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">Visualizações</label>
+                                    <input type="number" id="views" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required>
+                                </div>
+        
+                                <div>
+                                    <label for="age_classification" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">Classificação Etária</label>
+                                    <input type="number" id="age_classification" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required>
+                                </div>
+        
+                                <div>
+                                    <label for="god_id" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">ID do Deus</label>
+                                    <input type="number" id="god_id" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required>
+                                </div>
+        
+                                <div>
+                                    <label for="mythology_id" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">ID da Mitologia</label>
+                                    <input type="number" id="mythology_id" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required>
+                                </div>
+        
+                                <button type="submit" style="padding: 0.75rem 1.5rem; background-color: #4f46e5; color: white; font-weight: bold; border-radius: 0.375rem; cursor: pointer; transition: background-color 0.3s;">
+                                    Salvar
+                                </button>
+                            </form>
+                        </section>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </main>
+
+</body>
+<script src="js/hisscript.js"></script>
+</html>

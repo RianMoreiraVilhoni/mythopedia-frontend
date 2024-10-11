@@ -14,19 +14,22 @@
         <img src="../images/logo-site.png" alt="">
         <br><br>
         <ul class="menu-hover-fill flex flex-col items-start leading-none text-2xl uppercase space-y-4">
-            <li><a href="../index.html" data-text="home">home</a></li>
-            <li><a href="#" data-text="archives">Mitologias</a></li>
-            <li><a href="#" data-text="tags">Deuses</a></li>
+            <li><a href="historias.html" data-text="home">Historias</a></li>
+            <li><a href="mitologias.html" data-text="archives">Mitologias</a></li>
+            <li><a href="deuses.html" data-text="tags">Deuses</a></li>
             <li><a href="#" data-text="categories">Comentarios</a></li>
             <li><a href="#" data-text="about">Usuarios</a></li>
         </ul>
     </aside>
     <main style="width: 100vh;">
-
+        
         <div class="container">
             <div class="content">
                 <div class="title">
                     <h1>Gerenciar Mitologias</h1>
+                    <div class="text-center my-4">
+                        <button class="btn btn-primary" style="background-color: #1abc9c;" onclick="showAddForm()">Adicionar Nova Mitologia</button>
+                    </div>
                 </div>
                 <div class="MitologiaList" id="MitologiaList">
                     <div class="card">
@@ -50,21 +53,88 @@
                                 </span>
                             </a>
                         </div>
-                        <section id="MitologiaForm" class="d-none">
-                            <h2 id="formTitle">Cadastrar nova</h2>
-                            <form id="MitologiaFormElement">
+                        <section id="MitologiaForm" class="d-none" style="padding: 2rem; background-color: white; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 0.5rem;">
+                            <h2 id="formTitle" style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem; color: #4a5568;">Cadastrar nova Mitologia</h2>
+                            <form id="MitologiaFormElement" style="display: flex; flex-direction: column; gap: 1.5rem;">
                                 <input type="hidden" id="MitologiaId">
-                                <div class="mb-3">
-                                    <label for="nome" class="form-label">Nome</label>
-                                    <input type="text" class="form-control" id="nome" required>
+                        
+                                <div>
+                                    <label for="name" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">Nome</label>
+                                    <input type="text" id="name" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="tarifa" class="form-label">Tarifa</label>
-                                    <input type="number" step="0.01" class="form-control" id="tarifa" required>
+                        
+                                <div>
+                                    <label for="sub_description" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">Sub-descrição</label>
+                                    <input type="text" id="sub_description" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Salvar</button>
+                        
+                                <div>
+                                    <label for="description" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">Descrição</label>
+                                    <textarea id="description" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required></textarea>
+                                </div>
+                        
+                                <div>
+                                    <label for="origin" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">Origem</label>
+                                    <input type="text" id="origin" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required>
+                                </div>
+                        
+                                <div>
+                                    <label for="period" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">Período</label>
+                                    <input type="text" id="period" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required>
+                                </div>
+                        
+                                <div>
+                                    <label for="gods_qty" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">Quantidade de Deuses</label>
+                                    <input type="number" id="gods_qty" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required>
+                                </div>
+                        
+                                <div>
+                                    <label for="sacred_texts" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">Textos Sagrados</label>
+                                    <input type="text" id="sacred_texts" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required>
+                                </div>
+                        
+                                <div>
+                                    <label for="main_mytology" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">Mitologia Principal</label>
+                                    <input type="text" id="main_mytology" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required>
+                                </div>
+                        
+                                <div>
+                                    <label for="creator" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">Criador</label>
+                                    <input type="text" id="creator" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required>
+                                </div>
+                        
+                                <div>
+                                    <label for="data_creation" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">Data de Criação</label>
+                                    <input type="date" id="data_creation" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required>
+                                </div>
+                        
+                                <div>
+                                    <label for="last_update" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">Última Atualização</label>
+                                    <input type="date" id="last_update" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required>
+                                </div>
+                        
+                                <div>
+                                    <label for="main_symbol" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">Símbolo Principal</label>
+                                    <input type="text" id="main_symbol" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required>
+                                </div>
+                        
+                                <div>
+                                    <label for="mytology_banner" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">Banner da Mitologia (URL)</label>
+                                    <input type="url" id="mytology_banner" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required>
+                                </div>
+                        
+                                <div>
+                                    <label for="mytology_profile_img" style="display: block; font-size: 0.875rem; font-weight: 600; color: #4a5568;">Imagem de Perfil (URL)</label>
+                                    <input type="url" id="mytology_profile_img" style="margin-top: 0.25rem; width: 100%; padding: 0.5rem; border: 1px solid #d2d6dc; border-radius: 0.375rem; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);" required>
+                                </div>
+                        
+                                <button type="submit" style="padding: 0.75rem 1.5rem; background-color: #4f46e5; color: white; font-weight: bold; border-radius: 0.375rem; cursor: pointer; transition: background-color 0.3s;">
+                                    Salvar
+                                </button>
                             </form>
                         </section>
+                        
+                        
                     </div>
                 </div>
             </div>

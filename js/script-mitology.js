@@ -126,21 +126,6 @@ function showAddForm() {
             });
     }
     
-    function showAddForm() {
-        document.getElementById('mitologiaForm').classList.remove('d-none');
-        document.getElementById('mitologiaId').value = '';
-        document.getElementById('nome').value = '';
-        document.getElementById('descricao').value = '';
-        document.getElementById('origem').value = '';
-        document.getElementById('periodo_historico').value = '';
-        document.getElementById('qtd_deuses').value = '';
-        document.getElementById('texto_sagrado').value = '';
-        document.getElementById('mitologia_principal').checked = false; // Ajuste para booleano
-        document.getElementById('simbolo_principal').value = '';
-        document.getElementById('criador').value = '';
-        document.getElementById('formTitle').innerText = 'Adicionar Mitologia';
-    }
-    
     function showEditForm(id, nome, descricao, origem, periodo_historico, qtd_deuses, texto_sagrado, mitologia_principal, simbolo_principal, criador) {
         document.getElementById('mitologiaForm').classList.remove('d-none');
         document.getElementById('mitologiaId').value = id;
