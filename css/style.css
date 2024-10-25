@@ -1,0 +1,278 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Parte da pagina de mitologia!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+.all-pg-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 98%;
+    height: 60px;
+    border: 1px solid #525252;
+    background-color: #fff;
+    border-radius: 10px;
+    z-index: 999;
+
+}
+.input-button-box {
+    display: flex;
+    flex-direction:row;
+}
+
+/*logotype*/
+.logotype {
+    position: relative;
+    left: 100px;
+}
+/*dropdown*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.box-container {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.box {
+    background-color: #f1f1f1;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    flex: 1 1 calc(33.333% - 10px); /* 3 boxes in a row */
+    box-sizing: border-box;
+}
+
+/*Input*/
+.search {
+    padding: 10px;
+    border: 1px solid #868686;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: transform 0.3s;
+    width:160px ; /*calc(100% - 26px) Adjust for padding and border */
+}
+  
+.search:focus {
+    outline: none;
+    transform: scale(1.05);
+    background-color: #000;
+    color: #ffffff;
+}
+.inputs {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    justify-content: space-evenly;
+}
+/*bg image*/
+.bg-img {
+    width: 100%;
+    height: 300px;
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position:absolute;
+    top: 0px;
+    border: 1px solid #f0d435;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    z-index: 2;
+}
+
+  
+  
+ 
+ 
+  
+  .brutalist-card__button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 3px solid #000;
+    background-color: #fff;
+    color: #000;
+    position: relative;
+    transition: all 0.2s ease;
+    box-shadow: 5px 5px 0 #000;
+    overflow: hidden;
+    text-decoration: none;
+    margin-bottom: 1rem;
+  }
+  
+  
+
+  
+  .brutalist-card__button:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 #000;
+  }
+  .brutalist-card__button--mark{
+    width: 100px;
+    height: 15px;
+  }
+  .brutalist-card__button--mark:hover {
+    background-color: #000000;
+    border-color: #1d1d1d;
+    color: #fff;
+    box-shadow: 7px 7px 0 #000000;
+  }
+  
+
+  
+  .brutalist-card__button:active {
+    transform: translate(5px, 5px);
+    box-shadow: none;
+  }
+  
+/*MAIN*/
+main {
+    width: 100%;
+    height: 200vh;
+    background-color: #222452;
+    position: relative;
+    top: 200px;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+}
+.internal-box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 50px;
+    margin: 15px;
+    background-color: #fff;
+    width: 98%;
+    height: auto;
+    align-items: center;
+}
+.in-header-box {
+    display: flex;
+    margin: 20px;
+    width: 90%;
+    justify-content: space-evenly;
+    border: 1px solid #000;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+
+.sub-desc {
+    width: 400px;
+    height: 200px;
+    color: #7D83B9;
+}
+.wellcome {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img-in-main {
+    width: 250px;
+    height: 350px;
+    border-radius: 10px;
+}
+.in-main {
+    display: flex;
+    flex-direction: row;
+    position:relative;
+    top: 10%;
+    width: 1500px;
+    justify-content: space-evenly;
+
+}
+.in-text {
+    width: 600px;
+}
+.in-footer {
+    display: flex;
+    position: relative;
+    top: 15%;
+}
+#mitoname{
+    font-family: var(--font-title);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*//////////////////////////////////////////////////PARTE DO MAPA////////////////////////////////////////////////////*/
+.map-bg {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/wholeword.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1000;
+    position: fixed;
+}
+
+

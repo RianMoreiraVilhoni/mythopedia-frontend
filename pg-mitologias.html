@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Mitologias</title>
+</head>
+
+<body>
+    <br>
+
+    <!--Header-->
+    <header class="all-pg-header" style="z-index: 1000;">
+        <!--imagen-->
+        <div style="width:500px;display: flex;flex-direction: row;justify-content: space-around;">
+            <img class="logotype" src="images/logo-site.png" alt="" style="width: 250px; border-radius: 5px;left: 10px;">
+        <a class="brutalist-card__button brutalist-card__button--mark" href="index.html">Voltar</a>
+        </div>
+        
+        <!-- inputs/botões -->
+        <div class="inputs">
+            <a href="" style="text-decoration: none;color: #000;">Mapa</a>
+            <div class="dropdown">
+                <button class="dropbtn">Mitologias</button>
+                <div class="dropdown-content">
+                    <div class="box-container">
+                        <div class="box">
+                            Mitologia 1
+                        </div>
+                        <div class="box">
+                            Mitologia 2
+                        </div>
+                        <div class="box">
+                            Mitologia 3
+                        </div>
+                        <div class="box">
+                            Mitologia 4
+                        </div>
+                        <div class="box">
+                            Mitologia 5
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input class="search" required="" type="email" placeholder="Pesquisar mitologias" />
+        </div>
+
+
+
+    </header>
+    <!--Section de background (TEM QUE FICAR NO FUNDO(ATRAZ DE TUDO))-->
+    <section class="bg-img" id="bg-img" >
+    </section>
+    <main>
+        <!--Caixa azul de background-->
+        <section class="bg-text">
+            <!--caixa branca interna-->
+            <div class="internal-box" id="internal-box">
+                <!--header da caixa branca-->
+                <div class="in-header-box" id="inside-header-box">
+                    <div class="wellcome">
+                        <h1 id="mitoname">
+                            Guia definitivo para a mitologia {NOME}
+                        </h1>
+                    </div>
+
+                    <div class="sub-desc" id="sub-desc">
+                        <h3>{subdescriçao}</h3>
+                    </div>
+
+                </div>
+
+                <!--meio da caixa branca-->
+                <div class="in-main">
+                    <!--imagen da mitologia-->
+                    <div class="img-in-main"
+                        style="background-image: url(images/mito_japa.png);background-position: center;background-size: cover;">
+
+                    </div>
+
+                    <!--texto da mitologia-->
+                    <div class="in-text" id="inside-text">
+                        <h3>{descrição}</h3>
+                    </div>
+
+                    
+                </div>
+                <!--footer da caixa branca-->
+                <div class="in-footer">
+                    <h2>Recursos Populares</h2>
+                    <div class="popular-resources-box" id="popular-resources-box">
+                        <div class="popular-resources-box" id="story-list">
+                            <!-- Histórias serão preenchidas aqui -->
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+
+            </div>
+        </section>
+    </main>
+</body>
+<script src="js/script-mitology.js">
+</script>
+</html>

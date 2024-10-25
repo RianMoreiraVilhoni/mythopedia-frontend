@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/ajeitado.css">
+    <title>Mytophedia</title>
+</head>
+<style>
+
+
+header {
+	display: flex;
+	overflow: hidden;
+	height: 90vh;
+	background: #111;
+}
+
+header:hover img {
+	opacity: 0.5;
+}
+
+header img {
+	max-width: 250px;
+	vertical-align: middle;
+	border: 1px solid black;
+	box-sizing: border-box;
+	transition: opacity .2s;
+}
+
+header img:hover {
+	opacity: 1;
+}
+
+header .column {
+	animation: var(--animation, none) 16s infinite linear;
+}
+
+header .column:hover {
+	animation-play-state: paused;
+}
+
+header .column:nth-of-type(odd) {
+	align-self: flex-end;
+	--direction: 50%;
+}
+
+@keyframes slide {
+	to { transform: translateY(var(--direction, -50%)) }
+}
+
+
+</style>
+<body>
+    <!--Header-->
+    <div class="all-pg-header" style="z-index: 1000; margin-left: 13px; margin-top: 20px;">
+
+        <!--imagen-->
+        <img class="logotype" src="Images/Logo/logo.png" alt="" style="width: 150px; border-radius: 5px;left: 10px;">
+        
+        <!-- inputs/botões -->
+        <div class="inputs">
+            <a href="deuses.html" style="text-decoration: none;color: #000;">Mapa</a>
+            <div class="dropdown">
+                <button class="dropbtn">Mitologias</button>
+                <div class="dropdown-content">
+                    <div class="box-container">
+                        <div class="box">
+                            Mitologia 1
+                        </div>
+                        <div class="box">
+                            Mitologia 2
+                        </div>
+                        <div class="box">
+                            Mitologia 3
+                        </div>
+                        <div class="box">
+                            Mitologia 4
+                        </div>
+                        <div class="box">
+                            Mitologia 5
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input class="search" required="" type="text" placeholder="Pesquisar mitologias" id="searchInput" />
+            <div id="suggestions" class="suggestions"></div>
+
+        </div>
+    </div>
+    <!--BANER AQUI-->
+    <header>
+        <div class="column">
+            <a href="#"><img src="images/Astecas/Acuecucyoticihuati.jfif" alt="image"></a>
+            <a href="#"><img src="images/Astecas/Chalmecacihuilt.jfif" alt="image"></a>
+            <a href="#"><img src="images/Astecas/Tezcatlipoca.jfif" alt="image"></a>
+            <a href="#"><img src="images/Astecas/Ometeotl.jfif" alt="image"></a>
+        </div>
+        <div class="column">
+            <a href="#"><img src="images/Egípcios/Anúbis.jfif" alt="image"></a>
+            <a href="#"><img src="images/Egípcios/Hathor.jfif" alt="image"></a>
+            <a href="#"><img src="images/Egípcios/Rá-Tum.jfif" alt="image"></a>
+            <a href="#"><img src="images/Egípcios/Bastet.jfif" alt="image"></a>
+        </div>
+        <div class="column">
+            <a href="#"><img src="images/Gregos/Afrodite.jfif" alt="image"></a>
+            <a href="#"><img src="images/Gregos/Apolo.jfif" alt="image"></a>
+            <a href="#"><img src="images/Gregos/Ares.jfif" alt="image"></a>
+            <a href="#"><img src="images/Gregos/Atena.jfif" alt="image"></a>
+        </div>
+        <div class="column">
+            <a href="#"><img src="images/Hindu/Brahma.jfif" alt="image"></a>
+            <a href="#"><img src="images/Hindu/Ganesha.jfif" alt="image"></a>
+            <a href="#"><img src="images/Hindu/Lakshmi.jfif" alt="image"></a>
+            <a href="#"><img src="images/Hindu/Shiva.jfif" alt="image"></a>
+        </div>
+        <div class="column">
+            <a href="#"><img src="images/Iorubás/Iansã.jfif" alt="image"></a>
+            <a href="#"><img src="images/Iorubás/Iemanjá.jfif" alt="image"></a>
+            <a href="#"><img src="images/Iorubás/Ogun.jfif" alt="image"></a>
+            <a href="#"><img src="images/Iorubás/Olodumarê.jfif" alt="image"></a>
+        </div>
+        <div class="column">
+            <a href="#"><img src="images/Japoneses/Agyo and Ungyo.jfif" alt="image"></a>
+            <a href="#"><img src="images/Japoneses/Amaterasu.jfif" alt="image"></a>
+            <a href="#"><img src="images/Japoneses/Hachiman.jfif" alt="image"></a>
+            <a href="#"><img src="images/Japoneses/Inari.jfif" alt="image"></a>
+        </div>
+        <div class="column">
+            <a href="#"><img src="images/Nórdicos/Freya.jfif" alt="image"></a>
+            <a href="#"><img src="images/Nórdicos/Loki.jfif" alt="image"></a>
+            <a href="#"><img src="images/Nórdicos/Odin.jfif" alt="image"></a>
+            <a href="#"><img src="images/Nórdicos/Thor.jfif" alt="image"></a>
+        </div>
+        <div class="column">
+            <a href="#"><img src="images/Romanos/Apolo R.jfif" alt="image"></a>
+            <a href="#"><img src="images/Romanos/Vênus.jfif" alt="image"></a>
+            <a href="#"><img src="images/Romanos/Saturno.jfif" alt="image"></a>
+            <a href="#"><img src="images/Romanos/Flora.jfif" alt="image"></a>
+        </div>
+    </header>
+
+<!--COMEÇO DO MAIN-->
+    <section class="text">
+        <div class="titulo">
+            <h1 style="font-size: 45px;">Mitologia</h1>
+        </div>
+        <hr>
+        <div class="sobre">
+            <p>A palavra "mitologia" deriva do grego antigo "mythos" (μῦθος), que significa "mito" ou "história", e<br>
+                logia" (λογία), que significa "estudo" ou "discurso". Portanto, mitologia pode ser entendida como o<br>
+                estudo ou o conjunto de mitos de uma determinada cultura.</p>
+
+            <p>Os mitos são narrativas tradicionais que têm como objetivo explicar fenômenos naturais, a origem<br>
+                do mundo, a natureza dos deuses e dos heróis, e as práticas culturais e sociais de um povo. Eles<br>
+                geralmente contêm elementos sobrenaturais e simbólicos e são transmitidos de geração em<br>
+                geração, muitas vezes através da oralidade, antes de serem registrados por escrito.
+            </p>
+
+            <p>
+                Mitologia, então, se refere tanto ao conjunto dessas histórias quanto ao campo acadêmico que se<br>
+                dedica a estudá-las. As mitologias de diferentes culturas, como a grega, romana, nórdica, egípcia,<br>
+                chinesa, japonesa e muitas outras, oferecem uma visão profunda das crenças, valores, medos e<br>
+                aspirações das sociedades que as criaram.
+            </p>
+
+            <p>
+                Essas histórias são mais do que simples contos; elas desempenham um papel fundamental na<br>
+                formação da identidade cultural, na transmissão de valores morais e na compreensão do mundo ao<br>
+                redor. A mitologia também serve como uma ponte entre o passado e o presente, mostrando como as<br>
+                sociedades antigas compreendiam o mundo e como essas compreensões continuam a influenciar a<br>
+                cultura e a sociedade modernas.
+            </p>
+            
+        </div>
+
+    </section>
+
+    <div class="center">
+        <hr>
+        <h1 style="font-size: 45px;">Descubra </h1>
+        <h1 style="font-size: 45px; margin-top: -30px;">Mundos Antigos</h1>
+        <hr>
+    </div>
+    <div class="img-box">
+        <section class="cards">
+
+            <div class="container" id="MitologiaList">
+                
+            </div>
+        </section>
+    </div>
+    <section class="rodape">
+        <div class="rodape_sobre">
+            <div class="text_rodape">
+                <img src="./Images/Logo/logo.png" alt="">
+
+                <p> Nam fermentum orci dui, in pharetra massa cursus vitae. Nulla sed lacinia tellus, et ullamcorper
+                    nunc. Nulla condimentum vestibulum ultrices. In imperdiet mi id iaculis tincidunt. Pellentesque a
+                    lacus iaculis, cursus elit pellentesque, vehicula metus.</p>
+
+                <button>Enter your email -></button>
+            </div>
+            <div class="mito_rodape">
+
+                <h1>Mitologias</h1>
+
+                <div class="listas">
+                    <div class="lista">
+                        <li>Grecia</li>
+                        <li>Egipcia</li>
+                        <li>Nordica</li>
+                        <li>Romana</li>
+                        <li>Hindu</li>
+                    </div>
+                    <div class="lista">
+                        <li>Japonesa</li>
+                        <li>Asteca</li>
+                        <li>Ioruba</li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <footer>
+            <p>© 2022 Good Of Code Inc. All Rights Reserved. Privacy Policy.</p>
+        </footer>
+    </section>
+</body>
+<script src="js/script.js"></script>
+</html>
