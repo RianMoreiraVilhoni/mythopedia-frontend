@@ -12,7 +12,19 @@ document.addEventListener("DOMContentLoaded", function () {
             suggestions.style.display = 'none'; // Esconde as sugestões se a caixa estiver vazia
         }
     });
-
+//  <div class="card">
+//                             <a href="pg-mitologias.html?idmitologico=${mitologia.id}">
+//                                 <div class="caption">
+//                                     Mitologia ${mitologia.name}
+//                                 </div>
+//                                 <img src="http://localhost:8000/images/${mitologia.mytology_profile_img}" alt="Mitologia ${mitologia.name}">
+//                                 <div class="symbol">
+//                                     <span class="material-symbols-outlined">
+//                                         ${mitologia.main_symbol}
+//                                     </span>
+//                                 </div>
+//                             </a>
+//                         </div>
     function fetchMitologia() {
         fetch('http://localhost:8000/mythologies')
             .then(response => response.json())
@@ -22,19 +34,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 data.mytologies.forEach(mitologia => {
                     list.innerHTML += `
-                        <div class="card">
-                            <a href="pg-mitologias.html?idmitologico=${mitologia.id}">
-                                <div class="caption">
-                                    Mitologia ${mitologia.name}
-                                </div>
-                                <img src="http://localhost:8000/images/${mitologia.mytology_profile_img}" alt="Mitologia ${mitologia.name}">
-                                <div class="symbol">
-                                    <span class="material-symbols-outlined">
-                                        ${mitologia.main_symbol}
-                                    </span>
-                                </div>
-                            </a>
-                        </div>`;
+                    <div class="card">
+                    <a href="pg-mitologias.html?idmitologico=${mitologia.id}">
+                <img alt="${mitologia.name}" height="300"
+                    src="http://localhost:8000/images/${mitologia.mytology_profile_img}"
+                    width="200" />
+                <div class="category">
+                    MITOLOGIA
+                </div>
+                <div class="icon">
+                    <img alt="Mitology icon" height="40"
+                        src="http://localhost:8000/images/${mitologia.main_symbol}"
+                        width="40" />
+                </div>
+                <div class="title">
+                ${mitologia.name}
+                </div>
+                <div class="guide">
+                    Guiar
+                </div>
+                </a>
+            </div>
+                       `;
                 });
             })
             .catch(error => console.error("Error fetching mitologias:", error));
@@ -83,4 +104,41 @@ document.addEventListener("DOMContentLoaded", function () {
 	column.style.setProperty('--animation', 'slide');
 	column.style.setProperty('height', '200%');
 	column.innerHTML = column.innerHTML + column.innerHTML;
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const animatedElements = document.querySelectorAll('.fotos_mito');
+
+    function animateOnScroll() {
+        animatedElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight - 100;
+
+            if (isVisible) {
+                element.classList.add('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Executa no carregamento da página
+});
+
+[...document.querySelectorAll('.column')].map(column => {
+    column.style.setProperty('--animation', 'slide');
+    column.style.setProperty('height', '200%');
+    column.innerHTML = column.innerHTML + column.innerHTML;
+});
+
+document.getElementById("enviar-btn").addEventListener("click", function () {
+    const tiSection = document.querySelector(".ti");
+    const formContainer = document.querySelector(".card-email");
+
+    tiSection.style.transform = "translateX(-10%)";
+
+
+    formContainer.style.display = "block";
+    setTimeout(() => {
+        formContainer.style.transform = "translateX(10%)";
+    }, 10);
 });

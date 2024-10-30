@@ -4,106 +4,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Mitologias</title>
+    <title>Sobre Deues</title>
+    <link rel="stylesheet" href="css/ajeitado.css">
 </head>
 
 <body>
-    <br>
-
-    <!--Header-->
-    <header class="all-pg-header" style="z-index: 1000;">
-        <!--imagen-->
-        <div style="width:500px;display: flex;flex-direction: row;justify-content: space-around;">
-            <img class="logotype" src="images/logo-site.png" alt="" style="width: 250px; border-radius: 5px;left: 10px;">
-        <a class="brutalist-card__button brutalist-card__button--mark" href="index.html">Voltar</a>
+    <header class="navbar">
+        <div class="logo">
+            <img src="./images/logo1010100.png" alt="">
         </div>
-        
-        <!-- inputs/botões -->
-        <div class="inputs">
-            <a href="" style="text-decoration: none;color: #000;">Mapa</a>
-            <div class="dropdown">
-                <button class="dropbtn">Mitologias</button>
-                <div class="dropdown-content">
-                    <div class="box-container">
-                        <div class="box">
-                            Mitologia 1
-                        </div>
-                        <div class="box">
-                            Mitologia 2
-                        </div>
-                        <div class="box">
-                            Mitologia 3
-                        </div>
-                        <div class="box">
-                            Mitologia 4
-                        </div>
-                        <div class="box">
-                            Mitologia 5
-                        </div>
-                    </div>
+        <nav>
+            <ul>
+                <li> <a href="./index.html">Mitologias </a></li>
+                <li> <a href="./world.html">Mapa </a></li>
+                <li> <a href="">Sobre nós </a></li>
+            </ul>
+        </nav>
+        <div>
+            <a href="./login.html"><button>Login</button></a>
+        </div>
+    </header>
+    <section class="banner-deus">
+        <div class="text">
+            <div class="cx">
+                <p>Universo Mítico</p>
+                <h1>Enciclopédia</h1>
+                <div class="sobre">
+                    <p class="efeito">Da</p>
+                    <h2 id="nome-mito"></h2>
                 </div>
             </div>
-            <input class="search" required="" type="email" placeholder="Pesquisar mitologias" />
+        </div>
+        <div class="mitologia_foto" id="img-in-main">
+            <img src="./images/imagem (1).png" alt="Foto Deus">
+        </div>
+    </section>
+    <section class="deus_sobre">
+        <div class="header">
+            <p>
+                DESCOBRIR
+            </p>
+            <h1>
+                Visão Geral
+            </h1>
+            <div class="underline">
+            </div>
+
         </div>
 
+        <section class="mito">
+            <div class="text_mito" id="inside-text">
 
 
-    </header>
-    <!--Section de background (TEM QUE FICAR NO FUNDO(ATRAZ DE TUDO))-->
-    <section class="bg-img" id="bg-img" >
-    </section>
-    <main>
-        <!--Caixa azul de background-->
-        <section class="bg-text">
-            <!--caixa branca interna-->
-            <div class="internal-box" id="internal-box">
-                <!--header da caixa branca-->
-                <div class="in-header-box" id="inside-header-box">
-                    <div class="wellcome">
-                        <h1 id="mitoname">
-                            Guia definitivo para a mitologia {NOME}
-                        </h1>
-                    </div>
+                <p>A palavra "mitologia" deriva do grego antigo "mythos" (μῦθος), que significa "mito" ou "história", e
+                    logia" (λογία), que significa "estudo" ou "discurso". Portanto, mitologia pode ser entendida como o
+                    estudo ou o conjunto de mitos de uma determinada cultura.</p>
 
-                    <div class="sub-desc" id="sub-desc">
-                        <h3>{subdescriçao}</h3>
-                    </div>
+                <p>Os mitos são narrativas tradicionais que têm como objetivo explicar fenômenos naturais, a origem
+                    do mundo, a natureza dos deuses e dos heróis, e as práticas culturais e sociais de um povo. Eles
+                    geralmente contêm elementos sobrenaturais e simbólicos e são transmitidos de geração em
+                    geração, muitas vezes através da oralidade, antes de serem registrados por escrito.
 
-                </div>
+                </p>
+                <p>Mitologia, então, se refere tanto ao conjunto dessas histórias quanto ao campo acadêmico que se
+                    dedica a estudá-las. As mitologias de diferentes culturas, como a grega, romana, nórdica, egípcia,
+                    chinesa, japonesa e muitas outras, oferecem uma visão profunda das crenças, valores, medos e
+                    aspirações das sociedades que as criaram.</p>
+                <p>
+                    Essas histórias são mais do que simples contos; elas desempenham um papel fundamental na
+                    formação da identidade cultural, na transmissão de valores morais e na compreensão do mundo ao
+                    redor. A mitologia também serve como uma ponte entre o passado e o presente, mostrando como as
+                    sociedades antigas compreendiam o mundo e como essas compreensões continuam a influenciar a
+                    cultura e a sociedade modernas.
+                </p>
+            </div>
 
-                <!--meio da caixa branca-->
-                <div class="in-main">
-                    <!--imagen da mitologia-->
-                    <div class="img-in-main"
-                        style="background-image: url(images/mito_japa.png);background-position: center;background-size: cover;">
-
-                    </div>
-
-                    <!--texto da mitologia-->
-                    <div class="in-text" id="inside-text">
-                        <h3>{descrição}</h3>
-                    </div>
-
-                    
-                </div>
-                <!--footer da caixa branca-->
-                <div class="in-footer">
-                    <h2>Recursos Populares</h2>
-                    <div class="popular-resources-box" id="popular-resources-box">
-                        <div class="popular-resources-box" id="story-list">
-                            <!-- Histórias serão preenchidas aqui -->
-                        </div>
-                        
-                    </div>
-                </div>
+            <div class="fotos_mito" id="bg-img">
                 
-                
-
             </div>
         </section>
-    </main>
+    </section>
+
+
+    <section class="historia_deus">
+        <div class="header">
+            <p>DESCOBRIR</p>
+            <h1>Histórias</h1>
+            <div class="underline"></div>
+        </div>
+
+        <div class="carousel-container" id="story-list">
+            <button class="carousel-btn prev">‹</button>
+
+            
+
+            <button class="carousel-btn next">›</button>
+        </div>
+    </section>
+    <section class="comentario_deus">
+        <div class="ti">
+            <h4>Deixe seu Comentario!</h4>
+            <p>Compartilhe sua opinião e nos ajude</p>
+            <p>a trazer o melhor da mitologia.</p>
+            <p>Queremos ouvir de você!</p>
+            <button id="enviar-btn">Enviar Mensagem</button>
+        </div>
+        
+        <div class="form-container" style="display: none;">
+            <div class="subscribe">
+                <p>Comentario</p>
+                <input placeholder="mensagem" class="subscribe-input" name="email" type="email">
+                <br>
+                <div class="submit-btn">SUBMIT</div>
+            </div>
+        </div>
+    </section>
+    <section class="comentario_geral">
+        <div class="header">
+            <p>
+                DESCOBRIR
+            </p>
+            <h1>
+                Comentarios
+            </h1>
+            <div class="underline">
+            </div>
+        </div>
+
+        <section class="comen" id="comment-list">
+            
+
+            
+
+        </section>
+
+    </section>
+
+    <section class="rodape">
+        <div class="rodape_sobre">
+            <div class="text_rodape">
+                <img src="./images/logo1010100.png" alt="Logo">
+
+
+                <p> Nam fermentum orci dui, in pharetra massa cursus vitae. Nulla sed lacinia tellus, et ullamcorper
+                    nunc. Nulla condimentum vestibulum ultrices. In imperdiet mi id iaculis tincidunt. Pellentesque a
+                    lacus iaculis, cursus elit pellentesque, vehicula metus.</p>
+
+               
+            </div>
+            <div class="mito_rodape">
+
+                <h1>Mitologias</h1>
+
+                <div class="listas">
+                    <div class="lista">
+                        <li>Grecia</li>
+                        <li>Egipcia</li>
+                        <li>Nordica</li>
+                        <li>Romana</li>
+                        <li>Hindu</li>
+                    </div>
+                    <div class="lista">
+                        <li>Japonesa</li>
+                        <li>Asteca</li>
+                        <li>Ioruba</li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <footer>
+            <p>© 2022 Good Of Code Inc. All Rights Reserved. Privacy Policy.</p>
+        </footer>
+    </section>
+
+
+
+
+
+    <script src="js/script-mitology.js"></script>
+
 </body>
-<script src="js/script-mitology.js">
-</script>
+
 </html>

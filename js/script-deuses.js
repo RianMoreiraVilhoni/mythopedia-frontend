@@ -40,3 +40,62 @@ function fetchDeuses(id) {
             console.error("Error fetching mythology:", error);
         });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const animatedElements = document.querySelectorAll('.fotos_mito');
+
+    function animateOnScroll() {
+        animatedElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight - 100;
+
+            if (isVisible) {
+                element.classList.add('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Executa no carregamento da página
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.querySelector('.card-carousel');
+    const cards = document.querySelectorAll('.card_carro');
+    let currentIndex = 0;
+    const visibleCards = 4;
+    const cardWidth = cards[0].offsetWidth + 100;
+
+    function updateCarousel() {
+        const offset = -currentIndex * cardWidth;
+        carousel.style.transform = `translateX(${offset}px)`;
+    }
+
+    document.querySelector('.prev').addEventListener('click', () => {
+        currentIndex = currentIndex > 0 ? currentIndex - 1 : cards.length - visibleCards;
+        updateCarousel();
+    });
+
+    document.querySelector('.next').addEventListener('click', () => {
+        currentIndex = (currentIndex < cards.length - visibleCards) ? currentIndex + 1 : 0;
+        updateCarousel();
+    });
+
+    setInterval(() => {
+        currentIndex = (currentIndex < cards.length - visibleCards) ? currentIndex + 1 : 0;
+        updateCarousel();
+    }, 3000);
+});
+
+document.getElementById("enviar-btn").addEventListener("click", function () {
+    const tiSection = document.querySelector(".ti");
+    const formContainer = document.querySelector(".form-container");
+
+    tiSection.style.transform = "translateX(-10%)";
+
+
+    formContainer.style.display = "block";
+    setTimeout(() => {
+        formContainer.style.transform = "translateX(10%)";
+    }, 10);
+});
